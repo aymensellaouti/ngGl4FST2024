@@ -1,0 +1,14 @@
+.lampe {
+  width: 150px;
+  height: 150px;
+  padding: 60px;
+  border-radius: 50%;
+  border: black solid 1px;
+}
+.on {
+  background-color: yellow;
+}
+.off {
+  background-color: black;
+  color: white;
+}

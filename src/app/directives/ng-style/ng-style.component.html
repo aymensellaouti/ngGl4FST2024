@@ -1,0 +1,21 @@
+<p
+  [ngStyle]="{
+    color,
+    backgroundColor: bgc,
+    fontSize: font + 'px'
+  }"
+>ng-style works!</p>
+
+<div
+  (click)="interrupteur()"
+  class="lampe"
+  [ngClass]="{
+    'on': isOn,
+    'off': !isOn,
+  }"
+>lampe</div>
+
+<div appHighlight>test</div>
+<div appHighlight [in]="'white'" [out]="'red'">test</div>
+<div appHighlight [in]="'white'" [out]="'blue'">test</div>
+<div appHighlight [in]="'green'" [out]="'yellow'">test</div>

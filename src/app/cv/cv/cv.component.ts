@@ -25,6 +25,14 @@ export class CvComponent {
       'rotating_card_profile3.png',
       '12345',
       6
+    ),new Cv(
+      3,
+      'sellaouti',
+      'skander',
+      'student',
+      'rotating_card_profile3.png',
+      '112345',
+      6
     ),
   ];
   selectedCv: Cv | null = null;
