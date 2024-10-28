@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Cv } from '../model/cv';
 
 @Component({
@@ -9,4 +9,6 @@ import { Cv } from '../model/cv';
 export class CvListComponent {
   @Input()
   cvs: Cv[] = [];
+
+  @Output() forwardCv = new EventEmitter<Cv>();
 }
