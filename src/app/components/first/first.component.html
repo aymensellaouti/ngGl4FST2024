@@ -1,0 +1,10 @@
+<p [hidden]="isHidden"> {{name}} works!</p>
+<div
+(click)="showHide()"
+class="alert alert-warning">
+<input
+  (keyup)="changeMessage(myInput.value)"
+  #myInput type="text" class="form-control">
+<p> {{message}} </p>
+<app-second/>
+</div>
