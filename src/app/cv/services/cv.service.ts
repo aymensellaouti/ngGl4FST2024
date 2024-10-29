@@ -34,5 +34,18 @@ constructor() {
     return this.#cvs;
   }
 
+  getCvById(id: number): Cv | null {
+    return this.#cvs.find(cv => cv.id == id) ?? null;
+  }
+
+  deleteCv(cv: Cv): boolean {
+    const index = this.#cvs.indexOf(cv);
+    if (index != -1) {
+      this.#cvs.splice(index, 1);
+      return true;
+    }
+    return false;
+  }
+
 
 }

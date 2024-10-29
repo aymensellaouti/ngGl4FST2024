@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Cv } from '../model/cv';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CvService } from '../services/cv.service';
+import { APP_ROUTES } from 'src/app/config/app-routes.config';
 
 
 @Component({
@@ -14,13 +17,21 @@ export class DetailsCvComponent {
   // 21 Le cv existe on l'affiche
   // 22 Le cv n'existe pas on redirige vers la liste des cvs
   cv: Cv | null = null;
-
-  constructor(
-
-  ) {
+  acr = inject(ActivatedRoute);
+  router = inject(Router);
+  cvService = inject(CvService);
+  constructor() {
+    const id = this.acr.snapshot.params['id'];
+    this.cv = this.cvService.getCvById(+id);
+    if (!this.cv) {
+      this.router.navigate([APP_ROUTES.cv]);
+    }
   }
 
   deleteCv() {
-
+    if (this.cv) {
+      this.cvService.deleteCv(this.cv);
+      this.router.navigate([APP_ROUTES.cv]);
+    }
   }
 }
