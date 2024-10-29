@@ -19,6 +19,7 @@ import { NgStyleComponent } from './directives/ng-style/ng-style.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 import { TodoComponent } from './todo/component/todo/todo.component';
+import { RainbowDirective } from './directives/rainbow.directive';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TodoComponent } from './todo/component/todo/todo.component';
     HighlightDirective,
     MiniWordComponent,
     TodoComponent,
+    RainbowDirective,
   ],
   imports: [
     BrowserModule,
