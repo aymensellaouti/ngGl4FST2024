@@ -13,7 +13,7 @@ export class CvComponent {
       'sellaouti',
       'aymen',
       'teacher',
-      'rotating_card_profile2.png',
+      '    ',
       '1234',
       43
     ),
@@ -22,7 +22,7 @@ export class CvComponent {
       'sellaouti',
       'skander',
       'student',
-      'rotating_card_profile3.png',
+      '',
       '12345',
       6
     ),new Cv(
