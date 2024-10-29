@@ -21,6 +21,8 @@ import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 import { TodoComponent } from './todo/component/todo/todo.component';
 import { RainbowDirective } from './directives/rainbow.directive';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
+import { LoggerService } from './services/logger.service';
+import { SayHelloService } from './services/say-hello.service';
 
 @NgModule({
   declarations: [
