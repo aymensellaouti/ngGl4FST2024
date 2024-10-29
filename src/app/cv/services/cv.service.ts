@@ -5,11 +5,23 @@ import { Cv } from '../model/cv';
   providedIn: 'root',
 })
 export class CvService {
-  private cvs: Cv[] = [];
+  #cvs: Cv[] = [];
 
 constructor() {
-
-  }
+  this.#cvs = [
+    new Cv(1, 'sellaouti', 'aymen', 'teacher', '    ', '1234', 43),
+    new Cv(2, 'sellaouti', 'skander', 'student', '', '12345', 6),
+    new Cv(
+      3,
+      'sellaouti',
+      'skander',
+      'student',
+      'rotating_card_profile3.png',
+      '112345',
+      6
+    ),
+  ];
+}
 
   /**
    *
@@ -19,7 +31,7 @@ constructor() {
    *
    */
   getCvs(): Cv[] {
-    return this.cvs;
+    return this.#cvs;
   }
 
 

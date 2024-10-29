@@ -9,6 +9,8 @@ import { Cv } from '../model/cv';
 export class CvItemComponent {
   @Input({ required: true })
   cv!: Cv;
+  @Input()
+  size = 50;
   // Evenement qui nous permet d'envoyer un message au parent
   @Output()
   selectCv = new EventEmitter<Cv>();
