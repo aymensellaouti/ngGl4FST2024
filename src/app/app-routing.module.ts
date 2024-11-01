@@ -9,15 +9,22 @@ import { SecondComponent } from './components/second/second.component';
 import { PereComponent } from './comInterCompo/pere/pere.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 import { APP_ROUTES } from './config/app-routes.config';
+import { NF404Component } from './components/nf404/nf404.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { LoginComponent } from './auth/login/login.component';
 // /todo
 const routes: Routes = [
-  { path: '', component: FirstComponent },
-  { path: APP_ROUTES.cv, component: CvComponent },
-  { path: `${APP_ROUTES.cv}/:id`, component: DetailsCvComponent },
-  { path: 'todo', component: TodoComponent },
-  { path: 'word', component: MiniWordComponent },
-  { path: 'color', component: ColorComponent },
-  { path: ':unParam', component: SecondComponent },
+  {path: '', component: LayoutComponent, children: [
+    { path: '', component: FirstComponent },
+    { path: APP_ROUTES.cv, component: CvComponent },
+    { path: `${APP_ROUTES.cv}/:id`, component: DetailsCvComponent },
+    { path: 'todo', component: TodoComponent },
+    { path: 'word', component: MiniWordComponent },
+    { path: 'color', component: ColorComponent },
+    { path: 'login', component: LoginComponent },
+    { path: ':unParam', component: SecondComponent },
+  ]},
+  { path: '**', component: NF404Component },
 ];
 
 @NgModule({
