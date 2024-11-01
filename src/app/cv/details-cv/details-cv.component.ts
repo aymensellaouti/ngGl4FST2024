@@ -22,16 +22,18 @@ export class DetailsCvComponent {
   cvService = inject(CvService);
   constructor() {
     const id = this.acr.snapshot.params['id'];
-    this.cv = this.cvService.getCvById(+id);
-    if (!this.cv) {
-      this.router.navigate([APP_ROUTES.cv]);
-    }
+    // this.cv = this.cvService.getCvById(+id);
+    this.cvService.getCvByIdFromApi(id).subscribe({
+      next: (cv) => this.cv = cv,
+      error: (err) => this.router.navigate([APP_ROUTES.cv])
+    })
   }
 
   deleteCv() {
     if (this.cv) {
-      this.cvService.deleteCv(this.cv);
-      this.router.navigate([APP_ROUTES.cv]);
+      this.cvService.deleteCvByIdFromApi(this.cv.id).subscribe({
+        next: (response) => this.router.navigate([APP_ROUTES.cv]),
+      });
     }
   }
 }
