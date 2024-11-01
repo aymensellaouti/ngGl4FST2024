@@ -1,1 +1,3 @@
 https://www.youtube.com/@TechWall/playlists
+swagger de l'api : https://apilb.tridevs.net/explorer/#!/personne/personne_find
+exemple APi :  https://apilb.tridevs.net/api/personnes

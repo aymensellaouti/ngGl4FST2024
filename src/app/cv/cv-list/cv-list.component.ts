@@ -10,5 +10,5 @@ export class CvListComponent {
   @Input()
   cvs: Cv[] = [];
 
-  @Output() forwardCv = new EventEmitter<Cv>();
+  // @Output() forwardCv = new EventEmitter<Cv>();
 }
