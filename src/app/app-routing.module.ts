@@ -21,7 +21,12 @@ const routes: Routes = [
     { path: APP_ROUTES.cv, component: CvComponent },
     { path: `${APP_ROUTES.cv}/add`, component: AddCvComponent, canActivate: [authGuard] },
     { path: `${APP_ROUTES.cv}/:id`, component: DetailsCvComponent },
-    { path: 'todo', component: TodoComponent },
+    {
+      path: 'todo',
+      loadChildren: () => import('./todo/todo.module').then(
+        m => m.TodoModule
+      )
+     },
     { path: 'word', component: MiniWordComponent },
     { path: 'color', component: ColorComponent },
     { path: 'login', component: LoginComponent },

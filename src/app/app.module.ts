@@ -23,12 +23,8 @@ import { CvItemComponent } from './cv/cv-item/cv-item.component';
 import { NgStyleComponent } from './directives/ng-style/ng-style.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { MiniWordComponent } from './directives/mini-word/mini-word.component';
-import { TodoComponent } from './todo/component/todo/todo.component';
 import { RainbowDirective } from './directives/rainbow.directive';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
-import { LoggerService } from './services/logger.service';
-import { SayHelloService } from './services/say-hello.service';
-import { WeekTodoComponent } from './todo/week-todo/week-todo.component';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
@@ -39,6 +35,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { TestObservableComponent } from './rxjs/test-observable/test-observable.component';
 import { AddCvComponent } from './cv/add-cv/add-cv.component';
 import { AuthIntrceptorProvider } from './auth/interceptors/auth.interceptor';
+import { TodoModule } from './todo/todo.module';
 
 @NgModule({
   declarations: [
@@ -57,10 +54,9 @@ import { AuthIntrceptorProvider } from './auth/interceptors/auth.interceptor';
     NgStyleComponent,
     HighlightDirective,
     MiniWordComponent,
-    TodoComponent,
+
     RainbowDirective,
     DefaultImagePipe,
-    WeekTodoComponent,
     EmbaucheComponent,
     NavbarComponent,
     DetailsCvComponent,
