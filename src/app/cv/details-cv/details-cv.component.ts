@@ -29,11 +29,15 @@ export class DetailsCvComponent {
     })
   }
 
+  /**
+   * Supprime un Cv
+   */
   deleteCv() {
     if (this.cv) {
       this.cvService.deleteCvByIdFromApi(this.cv.id).subscribe({
         next: (response) => this.router.navigate([APP_ROUTES.cv]),
-      });
+        error: (err) => {console.log(err)}
+    })
     }
   }
 }

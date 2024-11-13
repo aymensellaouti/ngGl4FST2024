@@ -1,8 +1,9 @@
 import { inject, Injectable } from '@angular/core';
 import { Cv } from '../model/cv';
 import { Observable, Subject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { APP_API } from 'src/app/config/app-api.config';
+import { APP_CONST } from 'src/app/config/app-constantes.config';
 
 @Injectable({
   providedIn: 'root',
@@ -40,7 +41,15 @@ export class CvService {
     return this.http.get<Cv>(APP_API.cv + id);
   }
   deleteCvByIdFromApi(id: number): Observable<{count:number}> {
-    return this.http.delete<{ count: number }>(APP_API.cv + id);
+    // const params = new HttpParams().set(
+    //   APP_CONST.accessParamApiKey,
+    //   localStorage.getItem(APP_CONST.tokenLocalStorageKey) ?? ''
+    // );
+    const headers = new HttpHeaders().set(
+      APP_CONST.accessHeaderApiKey,
+      localStorage.getItem(APP_CONST.tokenLocalStorageKey) ?? ''
+    );
+    return this.http.delete<{ count: number }>(APP_API.cv + id, {headers});
   }
 
   /**
