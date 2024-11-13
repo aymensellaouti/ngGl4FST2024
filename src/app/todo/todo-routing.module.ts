@@ -8,7 +8,7 @@ const todoRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(todoRoutes)],
+  imports: [RouterModule.forChild(todoRoutes)],
   exports: [RouterModule]
 })
 export class TodoRoutingModule { }
