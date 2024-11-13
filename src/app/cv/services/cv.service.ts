@@ -45,11 +45,8 @@ export class CvService {
     //   APP_CONST.accessParamApiKey,
     //   localStorage.getItem(APP_CONST.tokenLocalStorageKey) ?? ''
     // );
-    const headers = new HttpHeaders().set(
-      APP_CONST.accessHeaderApiKey,
-      localStorage.getItem(APP_CONST.tokenLocalStorageKey) ?? ''
-    );
-    return this.http.delete<{ count: number }>(APP_API.cv + id, {headers});
+
+    return this.http.delete<{ count: number }>(APP_API.cv + id);
   }
 
   /**

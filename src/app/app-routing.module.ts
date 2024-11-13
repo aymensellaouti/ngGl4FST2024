@@ -12,11 +12,14 @@ import { APP_ROUTES } from './config/app-routes.config';
 import { NF404Component } from './components/nf404/nf404.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { LoginComponent } from './auth/login/login.component';
+import { AddCvComponent } from './cv/add-cv/add-cv.component';
+import { authGuard } from './auth/guards/auth.guard';
 // /todo
 const routes: Routes = [
   {path: '', component: LayoutComponent, children: [
     { path: '', component: FirstComponent },
     { path: APP_ROUTES.cv, component: CvComponent },
+    { path: `${APP_ROUTES.cv}/add`, component: AddCvComponent, canActivate: [authGuard] },
     { path: `${APP_ROUTES.cv}/:id`, component: DetailsCvComponent },
     { path: 'todo', component: TodoComponent },
     { path: 'word', component: MiniWordComponent },
